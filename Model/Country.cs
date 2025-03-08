@@ -26,4 +26,9 @@ public partial class Country
     [StringLength(3)]
     [Unicode(false)]
     public string Iso3 { get; set; } = null!;
+
+    [InverseProperty("Country")]
+    public virtual ICollection<City> Cities { get; set; } = new List<City>();
+
+    //public int Population { get; set; }
 }
